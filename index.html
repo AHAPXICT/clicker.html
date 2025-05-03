@@ -240,7 +240,10 @@
         elements.autoUpgrade.addEventListener('click', buyAutoUpgrade);
         
         const save = localStorage.getItem('gameState')
-        gameState = JSON.parse(save)
+        const s = JSON.parse(save)
+        if (s != null && s != undefined) {
+          gameState = s
+        }
         
         // Запуск пассивного дохода
         setInterval(() => {
